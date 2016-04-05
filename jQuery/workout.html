@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Workout</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="themes/themerollerSchool.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"> </script>
+		<script>
+			$(document).bind('mobileinit',function(){
+				$.mobile.pushStateEnabled = false;
+			});
+		</script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"> </script>   
+		<script src="scripts.js"> </script>
+    </head>
+    <body>
+	<div data-role="page" id="workout">
+        <div data-role="header" class="ui-bar ui-bar-a">
+			<h2>
+				Workout
+			</h2>
+		</div>
+		<div  class="ui-content" data-theme="a">
+			<div class="ui-body ui-body-a ui-corner-all">
+				<ul id="items" data-role="listview" data-inset="true"></ul> <br>
+				<button onclick="unCheckAll();">New round</button>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<div data-role="navbar" class="ui-navbar" role="navigation">
+				<ul class="ui-grid-a">
+					<li class="ui-block-a">
+						<a href="index.html" target="_top" data-iconpos="left" data-icon="home" id="tutorial" class="ui-link ui-btn ui-icon-bars ui-btn-icon-top ui-icon-home">Homepage</a>
+					</li>
+					<li class="ui-block-b">
+						<a href="workout.html" target="_top" id="teacher" data-icon="user" class="ui-link ui-btn ui-btn-icon-top ui-btn-active">Workout</a>
+					</li>
+					<li class="ui-block-c">
+						<a href="settings.html" target="_top" id="teacher" data-iconpos="left"  data-icon="gear" class="ui-link ui-btn ui-btn-icon-top">Personalize</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    </body>
+</html>

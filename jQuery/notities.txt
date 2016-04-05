@@ -1,0 +1,11 @@
+Wibauthuis 04A10.
+
+Rond 14:00.
+
+- shared preferences.
+- scores opslaan in database en laten zien in list met clear all scores.
+
+Voor oral:
+Commentaar aanpassen
+Update in database en fragments. Bijvoorbeeld scores ophalen.
+
