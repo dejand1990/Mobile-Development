@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dice</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_bord">BordActivity</string>
+    <string name="intro_text">This is a drinking game. You roll the dice, depending on your luck you have to perform a certain task!</string>
+    <string name="secret_time">Tell a true humiliating secret about yourself.</string>
+    <string name="secret_skip">Or, grow a pair and dare a drink!</string>
+</resources>
