@@ -1,7 +1,9 @@
+//This is to hide and show the instructions
 function hideInstructions(){
 	$('#instructionsText').toggle();
 }
 
+//Set the values if none are set
 function setIfEmpty(){
 	if(window.localStorage.length < 1){
 		var workouts = getWorkouts();
@@ -35,23 +37,22 @@ function setIfEmpty(){
 
 }
 
+//Gets the workouts from the localstorage, else creates a empty array
 function getWorkouts(){
-	// See if objects is inside localStorage
 	if (localStorage.getItem("workouts")){
-		// If yes, then load the objects
 		workouts = JSON.parse(localStorage.getItem("workouts"));
 	}else{
-		// Make a new array of objects
 		workouts = new Array();
 	}
 	return workouts;
 }
 
+//Saves a workout to the localstorage
 function saveWorkouts(workouts){
-	// Save the list into localStorage
 	localStorage.setItem("workouts", JSON.stringify(workouts));
 }
 
+//Sets workouts in the listview
 function setWorkouts(){
 	// Fetch the existing objects
 	workouts = getWorkouts();
@@ -69,23 +70,27 @@ function setWorkouts(){
    $('#items').listview("refresh");
 }
 
+//Calls the function before the pageview
 $(document).on('pagebeforeshow', '#workout', function(event) {
 	setIfEmpty();
-	console.log(getWorkouts());
 });
 
+//This is to reset the color and "uncheck" all the selected values
 function unCheckAll(){
 	$('.workouts').css({'background-color':'#FFFFFF','color':'#000000'});
 }
 
+//Change color on click
 $(document).on('click', '.workouts', function() {
 	$(this).css({'background-color':'#009933','color':'#FFFFFF'});	
 });
 
+//Same for taphold, just in case
 $(document).on('taphold', '.workouts', function() {
 	$(this).css({'background-color':'#009933','color':'#FFFFFF'});	
 });
 
+//Gets the workout to be added from the inputfields and passes it to saveworkouts
 function add(){
 	// Retrieve the entered form data
 	var workout = $('#workoutName').val();
@@ -105,11 +110,13 @@ function add(){
 	window.location.reload();
 }
 
+//Clears the workouts, which will make the default be set at next pageview
 function resetToDefault(){
 	localStorage.clear();
 	alert("Reset to default workouts");
 }
 
+//Sets the workout to nothing, so that the default dont get set.
 function removeAll(){
 	localStorage.clear();
 	localStorage.setItem("workouts", "");
